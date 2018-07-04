@@ -5,25 +5,52 @@ var color, width, height;
 sizePicker = document.getElementById('sizePicker');
 sizePicker.addEventListener('submit', function(event) { 
 	event.preventDefault();
-  	height = $('#inputHeight').val();
+  	height = document.querySelector('#inputHeight').value;
 	width = $('#inputWeight').val();
 	makeGrid(height, width);
 });
 
-function makeGrid(h, w) {
+/*function makeGrid(h, w) {
 	for (let x = 1; x <= w; x++) {
-  	 x = document.createElement('tr');
-  	 x.innerHTML = '<tr> </tr>'
+  	 
   for (let y=1; y <= h; y++) {
-  		y = document.createElement("td");
-    	y.innerHTML = '<td> </td>';
-    	x.appendChild(y);
+  		console.log ("y");
 		}
     }
-}
+}*/
+var rows = document.createElement('tr');
+var cols = document.createElement('td');
+function makeGrid () {
+	rows.innerHTML('<tr> </tr>');
+	cols.innerHTML('<td> </td>');
+	cols.innerHTML('<td> </td>');
+}	
+rows.appendChild(cols);
+document.querySelector('#pixelCanvas').appendChild(rows);
+
+var rows = document.createElement('tr');
+var cols = document.createElement('td');
+function makeGrid (height, width) {
+	//rows.innerHTML('<tr> </tr>');
+	for( var i = 1; i <= height; i++) {
+	cols.innerHTML('<td></td>');
+	cols(i);
+	}
+}	
+rows.appendChild(cols);
+document.querySelector('#pixelCanvas').appendChild(rows);
 
 
-
+color = document.querySelector('#colorPicker').val(' ');
+cols.addEventListener('click', function addColor() {
+	color.val();
+	if($(this).attr('style')) {
+			$(this).removeAttr('style')
+		} else {
+			$(this).attr('style', 'background-color:' + color);
+		}	
+	
+});
 
 /*
 for (var x = 1; x <= h; x++) {
