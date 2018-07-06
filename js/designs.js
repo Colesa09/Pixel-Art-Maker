@@ -31,9 +31,11 @@ document.querySelector('#pixelCanvas').appendChild(rows);
 var rows = document.createElement('tr');
 var cols = document.createElement('td');
 function makeGrid (height, width) {
-	document.querySelector('#pixelCanvas').appendChild(rows);
-	for( var i = 1; i <= height; i++) {
-	rows.appendChild(cols);
+	for (var i =1; i <= height; i++) {
+		document.querySelector('#pixelCanvas').appendChild(rows);
+		for( var j = 1; j <= width; i++) {
+		rows.appendChild(cols);
+		}
 	}
 }	
 
