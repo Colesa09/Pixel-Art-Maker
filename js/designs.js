@@ -5,8 +5,8 @@ var color, width, height;
 sizePicker = document.getElementById('sizePicker');
 sizePicker.addEventListener('submit', function(event) { 
 	event.preventDefault();
-  	height = document.querySelector('#inputHeight').value;
-	width = $('#inputWeight').val();
+  	height = document.getElementById('inputHeight').value;
+	width = document.getElementById('inputWidth').value;
 	makeGrid(height, width);
 });
 
@@ -20,13 +20,8 @@ function makeGrid (height, width) {
 		rows.appendChild(cols);
 		}
 	}
-}	
-
-
-
-color = document.querySelector('#colorPicker').val(' ');
-cols.addEventListener('click', function addColor() {
-	color.val();
+	color = document.getElementById('colorPicker').value;
+	cols.addEventListener('click', function addColor() {
 	if($(this).attr('style')) {
 			$(this).removeAttr('style')
 		} else {
@@ -34,6 +29,11 @@ cols.addEventListener('click', function addColor() {
 		}	
 	
 });
+}	
+
+
+
+
 
 /*
 for (var x = 1; x <= h; x++) {
