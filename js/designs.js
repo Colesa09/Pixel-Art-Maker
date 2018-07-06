@@ -10,23 +10,6 @@ sizePicker.addEventListener('submit', function(event) {
 	makeGrid(height, width);
 });
 
-/*function makeGrid(h, w) {
-	for (let x = 1; x <= w; x++) {
-  	 
-  for (let y=1; y <= h; y++) {
-  		console.log ("y");
-		}
-    }
-}*/
-var rows = document.createElement('tr');
-var cols = document.createElement('td');
-function makeGrid () {
-	rows.innerHTML('<tr> </tr>');
-	cols.innerHTML('<td> </td>');
-	cols.innerHTML('<td> </td>');
-}	
-rows.appendChild(cols);
-document.querySelector('#pixelCanvas').appendChild(rows);
 
 var rows = document.createElement('tr');
 var cols = document.createElement('td');
