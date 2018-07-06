@@ -31,14 +31,12 @@ document.querySelector('#pixelCanvas').appendChild(rows);
 var rows = document.createElement('tr');
 var cols = document.createElement('td');
 function makeGrid (height, width) {
-	//rows.innerHTML('<tr> </tr>');
+	document.querySelector('#pixelCanvas').appendChild(rows);
 	for( var i = 1; i <= height; i++) {
-	cols.innerHTML('<td></td>');
-	cols(i);
+	rows.appendChild(cols);
 	}
 }	
-rows.appendChild(cols);
-document.querySelector('#pixelCanvas').appendChild(rows);
+
 
 
 color = document.querySelector('#colorPicker').val(' ');
